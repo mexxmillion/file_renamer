@@ -2,12 +2,15 @@
 
 Standalone desktop file renamer built with PySide6 for macOS and Windows.
 
+![File Renamer UI](docs/assets/file-renamer-ui.png)
+
 ## Features
 
 - Three-column layout:
-  - Left: drag and drop source files and reorder them
-  - Middle: search/replace controls and action buttons
-  - Right: live rename preview
+  - Left: rename controls and action buttons
+  - Middle: drag and drop source files with manual reordering
+  - Right: live rename preview aligned to the source list
+- Dark, compact professional UI theme
 - Wildcard-aware search and replace
   - `*` matches any number of characters
   - `?` matches one character
@@ -40,6 +43,8 @@ python app.py
 ## Notes
 
 - Search and replace is applied to the filename stem, then the original extension is kept.
+- Preview updates immediately as you edit rename inputs or switch rename modes.
+- Only the active rename mode section is enabled in the UI to avoid ambiguity.
 - Sequence mode replaces the first run of `#` characters with a zero-padded index and maps `.ext` to the source file extension.
 - When `Rename in place` is disabled, a relative target such as `renamed` is created beside each source file.
 - Undo only reverts the most recent successful rename batch saved by the app.
